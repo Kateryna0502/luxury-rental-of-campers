@@ -1,19 +1,40 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import CatalogPage from './pages/CatalogPage';
-import DetailsPage from './pages/DetailsPage';
-import Header from './components/Hero';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import HomePage from './pages/HomePage';
+// import CatalogPage from './pages/CatalogPage';
+// import DetailsPage from './pages/DetailsPage';
+// import Header from './components/Hero';
+
+// function App() {
+//   return (
+//     <Router>
+//       <Header />
+//       <Routes>
+//         <Route path="/" element={<HomePage />} />
+//         <Route path="/catalog" element={<CatalogPage />} />
+//         <Route path="/catalog/:id" element={<DetailsPage />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import CatalogPage from "./pages/CatalogPage";
+import CamperDetails from "./pages/CamperDetails";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/catalog/:id" element={<DetailsPage />} />
+        <Route path="/catalog/:id" element={<CamperDetails />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

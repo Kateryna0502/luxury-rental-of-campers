@@ -1,0 +1,169 @@
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.submitButton {
+    padding: 10px;
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #e14a50;
+}
+
+.debugBox {
+    background-color: #eef;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: monospace;
+    margin-top: 15px;
+}
+
+
+
+.filter-panel,
+.booking-form,
+.reviews-section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #6c717b;
+}
+
+.field {
+    border: none;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 48px;
+}
+
+.field::placeholder {
+    color: #6c717b;
+}
+
+.field:focus {
+    outline: none;
+    color: #101828;
+}
+
+.desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #475467;
+    margin-bottom: 32px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 360px;
+}
+
+.vehicle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #dadde1;
+} */
