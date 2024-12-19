@@ -2,7 +2,7 @@
 
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import styles from "./FilterForm.module.css"; // Підключення CSS Module
+import styles from "./FilterPanel.module.css"; // Підключення CSS Module
 import { fetchCampers } from "../../api/campersAPI";
 
 // Схема валідації форми

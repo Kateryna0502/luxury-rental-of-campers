@@ -1,0 +1,49 @@
+
+ .header {
+     display: flex;
+     align-items: center;
+     /* Центрування елементів вертикально */
+     justify-content: space-between;
+     /* Розташування логотипу та навігації окремо */
+     padding: 0 64px;
+     /* Відступи з боків */
+     height: 80px;
+     /* Фіксована висота хедера */
+     border-bottom: 1px solid var(--badges);
+     /* Лінія під хедером */
+     background-color: var(--inputs);
+     /* Колір фону */
+ }
+
+ /* Стиль для контейнера логотипу */
+ .logoContainer {
+     flex: 0 0 auto;
+     /* Фіксує логотип ліворуч */
+ }
+
+ /* Стиль для навігації */
+ .navigation {
+     position: absolute;
+     /* Центрування навігації */
+     left: 50%;
+     /* Розташування посередині горизонтально */
+     transform: translateX(-50%);
+     /* Вирівнювання по центру */
+     display: flex;
+     gap: 32px;
+     /* Відстань між посиланнями */
+ }
+
+ /* Стиль для посилань */
+ .link {
+     font-weight: 500;
+     font-size: 16px;
+     text-decoration: none;
+     color: var(--color-gray);
+ }
+
+ .active {
+     color: var(--button-hover);
+     /* Активне посилання */
+ }
+ 
