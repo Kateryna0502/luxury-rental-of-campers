@@ -27,10 +27,10 @@ const middleware = (
       ],
     },
   });
-import campersReduser from "./trucks/trucksSlice.js";
+import campersReduser from "./campers/slice.js";
 
 const rootReducer = combineReducers({
-  trucks: campersReduser,
+  campers: campersReduser,
 });
 
 export const store = configureStore({

@@ -1,116 +1,30 @@
-.container {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.fieldGroup {
-    display: flex;
-    flex-direction: column;
-}
-
 .label {
-    margin-bottom: 5px;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 .input {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.checkboxLabel {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    opacity: 0;
+    position: absolute;
     cursor: pointer;
 }
 
-.submitButton {
-    padding: 10px;
-    background-color: #ff5a5f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+.checked {
+    border-color: var(--button);
 }
 
-.submitButton:hover {
-    background-color: #e14a50;
+.text::first-letter {
+    text-transform: uppercase;
 }
-
-.debugBox {
-    background-color: #eef;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-family: monospace;
-    margin-top: 15px;
-}
-
-
-
-.filter-panel,
-.booking-form,
-.reviews-section {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.error {
-    color: red;
-    font-size: 12px;
-}
-
 
 /* .container {
     display: flex;

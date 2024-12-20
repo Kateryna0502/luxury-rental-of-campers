@@ -14,13 +14,13 @@ import {
 
 import BookingForm from "../../components/BookingForm/BookingForm.jsx";
 import VehicleDetails from "../../components/VehicleDetails/VehicleDetails.jsx";
-import MainTruckInfo from "../../components/MainTruckInfo/MainTruckInfo.jsx";
+import CamperCard from "../../components/CamperCard/CamperCard.jsx";
 
 import {
   selectIsRefreshing,
   selectCampersInfo,
-} from "../../redux/campers/campersSelectors.js";
-import { getCamperById } from "../../redux/campers/campersOperations.js";
+} from "../../redux/campers/selectors.js";
+import { getCamperById } from "../../redux/campers/operations.js";
 
 import css from "./CamperPage.module.css";
 import Reviews from "../../components/Reviews/Reviews.jsx";
@@ -28,7 +28,7 @@ import Loader from "../../components/Loader/Loader.jsx";
 
 function CamperInfoPage() {
   const dispatch = useDispatch();
-  const truckInfo = useSelector(
+  const camperInfo = useSelector(
     selectCampersInfo,
   );
   const loader = useSelector(
@@ -61,13 +61,13 @@ function CamperInfoPage() {
       {loader ? (
         <Loader />
       ) : (
-        Object.keys(truckInfo)
+        Object.keys(camperInfo)
           .length !== 0 && (
           <div
             className={css.container}
           >
-            <MainTruckInfo
-              truckInfo={truckInfo}
+            <CamperCard
+              camperInfo={camperInfo}
             />
             <div
               className={css.navigation}
@@ -108,12 +108,12 @@ function CamperInfoPage() {
             >
               {features ? (
                 <VehicleDetails
-                  truckInfo={truckInfo}
+                  truckInfo={camperInfo}
                 />
               ) : (
                 <Reviews
                   reviews={
-                    truckInfo.reviews
+                    camperInfo.reviews
                   }
                 />
               )}

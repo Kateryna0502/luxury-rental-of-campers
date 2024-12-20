@@ -1,0 +1,48 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    width: 50%;
+    height: 588px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.blockWrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    background: var(--badges);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--button);
+}
+
+.title {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.starsList {
+    display: flex;
+    gap: 4px;
+}
+
+.desc {
+    color: var(--text);
+}

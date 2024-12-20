@@ -1,4 +1,4 @@
-import TruckOptions from "../TruckOptions/TruckOptions";
+import VehicleOptions from "../VehicleOptions/VehicleOptions.jsx";
 import css from "./VehicleListOptions.module.css";
 
 export default function VehicleListOptions({
@@ -13,20 +13,20 @@ export default function VehicleListOptions({
   return (
     <ul className={css.ul}>
       <li>
-        <TruckOptions
+        <VehicleOptions
           option={data.transmission}
           id="transmission"
         />
       </li>
       <li>
-        <TruckOptions
+        <VehicleOptions
           option={data.engine}
           id="engine"
         />
       </li>
       {options.map((option) => (
         <li key={option}>
-          <TruckOptions
+          <VehicleOptions
             option={option}
             id={option}
           />

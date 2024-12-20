@@ -30,7 +30,7 @@ export const getAllCampers =
 
 export const getCamperById =
   createAsyncThunk(
-    "campers/CamperInfo",
+    "campers/camperInfo",
     async (id, thunkAPI) => {
       try {
         const { data } =

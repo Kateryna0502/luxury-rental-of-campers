@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   getAllCampers,
   getCamperById,
-} from "./trucksOperations.js";
+} from "./operations.js";
 
 const INITIAL_STATE = {
   total: 0,

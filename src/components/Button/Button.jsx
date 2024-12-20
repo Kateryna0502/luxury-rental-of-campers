@@ -1,11 +1,50 @@
-import { Link } from "react-router-dom";
-import css from "./Button.module.css";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import clsx from "clsx";
 
-const Button = ({ to, children }) => {
+import { selectFilters } from "../../redux/campers/selectors.js";
+import { addQueryFilters, resetItems } from "../../redux/campers/action.js";
+import createQueryParams from "../../utils/createQueryParams.js";
+
+import css from "./Button.module.css";
+import { getCamperById, getAllCampers } from "../../redux/campers/operations.js";
+
+const Button = ({ variant, id, children, loadMore, disabled = false, type = "button" }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const filters = useSelector(selectFilters);
+
+  const handleButtonClick = () => {
+    if (variant === "viewNow") navigate("/catalog");
+    if (variant === "showMore") {
+      navigate(`/catalog/${id}`);
+      dispatch(getCamperById(id));
+    }
+    if (variant === "loadMore") loadMore();
+    if (variant === "search") {
+      const queryFilters = createQueryParams(filters);
+      dispatch(addQueryFilters(queryFilters));
+      dispatch(resetItems());
+      dispatch(getAllCampers());
+    }
+  };
+
   return (
-    <Link to={to} className={css.link}>
+    <button
+      className={clsx(css.button, {
+        [css.view]: variant === "viewNow",
+        [css.show]: variant === "showMore",
+        [css.load]: variant === "loadMore",
+        [css.search]: variant === "search",
+        [css.submit]: variant === "submit",
+      })}
+      onClick={handleButtonClick}
+      disabled={disabled}
+      type={type}
+    >
       {children}
-    </Link>
+    </button>
   );
 };
+
 export default Button;
