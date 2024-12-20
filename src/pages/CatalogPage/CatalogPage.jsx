@@ -1,39 +1,44 @@
-// import css from "./DetailsPage.module.css";
 
 
 
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { fetchCamperById } from "../api/campersApi.jsx";
-import BookingForm from "../components/BookingForm.jsx";
 
-const DetailsPage = () => {
-  const { id } = useParams();
-  const [camper, setCamper] = useState(null);
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import VehicleEquipment from "../../components/VehicleEquipment/VehicleEquipment.jsx";
+import VehicleType from "../../components/VehicleType/VehicleType.jsx";
+
+import Button from "../../components/Button/Button.jsx";
+import Location from "../../components/Location/Location.jsx";
+
+import CampersList from "../../components/CampersList/CampersList.jsx";
+
+import { resetItems } from "../../redux/campers/action.js";
+
+import css from "./CatalogPage.module.css";
+
+const CatalogPage = () => {
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const getCamper = async () => {
-      const data = await fetchCamperById(id);
-      setCamper(data);
-    };
-    getCamper();
-  }, [id]);
+    dispatch(resetItems());
+  }, [dispatch]);
 
   return (
-    <div>
-      {camper ? (
-        <>
-          <h1>{camper.name}</h1>
-          <img src={camper.image} alt={camper.name} />
-          <p>€{camper.price}.00</p>
-          <p>{camper.description}</p>
-          <BookingForm />
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div className={css.container}>
+      <section className={css.filters}>
+        <Location />
+        <VehicleEquipment />
+        <VehicleType />
+        <Button variant="search">
+          Search
+        </Button>
+      </section>
+      <section className={css.trucks}>
+        <CampersList />
+      </section>
     </div>
   );
 };
 
-export default DetailsPage;
+export default CatalogPage;

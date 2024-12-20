@@ -3,7 +3,7 @@ import {
   useSelector,
 } from "react-redux";
 
-// import Icon from "../Icons/Icon.jsx";
+import Icon from "../Icons/Icon.jsx";
 
 import { selectLocation } from "../../redux/campers/selectors.js";
 import { addLocation } from "../../redux/campers/action.js";
@@ -30,9 +30,9 @@ const Location = () => {
           className={css.input}
           onChange={onHandleChange}
         />
-        {/* <i className={css.icon}>
+        <i className={css.icon}>
           <Icon id="map" width={20} height={20} className={css.icon} />
-        </i> */}
+        </i>
       </div>
     </div>
   );

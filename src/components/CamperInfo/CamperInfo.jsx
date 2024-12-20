@@ -25,7 +25,7 @@ const CamperInfo = ({ data, onClick, favorites }) => {
                 onClick={() => onClick(data.id)}
               >
                 <Icon
-                  id="like"
+                  id="heart"
                   width={26}
                   height={24}
                   color={isFavorite && "button"}
@@ -35,15 +35,15 @@ const CamperInfo = ({ data, onClick, favorites }) => {
           </div>
           <ul className={css.rating_location}>
             <li>
-              <Icon id="icon-Property-1Pressed" width={16} height={14} color="rating" />
+              <Icon id="pressed" width={16} height={14} color="rating" />
               <p>
                 {data.rating} ({data.reviews.length} Reviews)
               </p>
             </li>
-            {/* <li>
+            <li>
               <Icon id="map" width={16} height={14} />
               <p>{data.location}</p>
-            </li> */}
+            </li>
           </ul>
         </section>
         <p className={css.description}>{data.description}</p>

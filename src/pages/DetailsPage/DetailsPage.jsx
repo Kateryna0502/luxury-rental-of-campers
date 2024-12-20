@@ -22,7 +22,7 @@ import {
 } from "../../redux/campers/selectors.js";
 import { getCamperById } from "../../redux/campers/operations.js";
 
-import css from "./CamperPage.module.css";
+import css from "./DetailsPage.module.css";
 import Reviews from "../../components/Reviews/Reviews.jsx";
 import Loader from "../../components/Loader/Loader.jsx";
 
@@ -31,11 +31,13 @@ function CamperInfoPage() {
   const camperInfo = useSelector(
     selectCampersInfo,
   );
+  console.log(camperInfo);
   const loader = useSelector(
     selectIsRefreshing,
   );
 
   const { id } = useParams();
+  console.log(id); 
 
   const [features, setFeatures] =
     useState(true);
@@ -45,6 +47,7 @@ function CamperInfoPage() {
   useEffect(() => {
     dispatch(getCamperById(id));
   }, [dispatch, id]);
+  
 
   const handleClick = (name) => {
     if (name === "features") {
@@ -108,7 +111,7 @@ function CamperInfoPage() {
             >
               {features ? (
                 <VehicleDetails
-                  truckInfo={camperInfo}
+                  camperInfo={camperInfo}
                 />
               ) : (
                 <Reviews
