@@ -1,0 +1,40 @@
+.mainWrapper {
+    border: 1px solid var(--gray-light);
+    border-radius: 10px;
+    padding: 44px 57px;
+    width: 50%;
+    height: 588px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.desc {
+    color: var(--gray);
+    margin-bottom: 24px;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.inputsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.comment {
+    height: 118px;
+    resize: none;
+}
+
+.button {
+    display: block;
+    margin: auto;
+}
