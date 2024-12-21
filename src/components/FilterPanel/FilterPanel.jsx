@@ -1,3 +1,88 @@
+// import clsx from "clsx";
+
+// import { Checkbox } from "../Checkbox/Checkbox.jsx";
+
+// // import sprite from "../../images/sprite.svg";
+
+// import css from "./FilterPanel.module.css";
+
+// const FilterPanel = () => {
+//   return (
+//     <>
+//       <form className={css.box}>
+//         {/* <label className={css.label}>
+//           Location
+//           <div className={css.boxInput}>
+//             <svg className={css.svg} width={20} height={20}>
+//               <use href={`${sprite}#icon-map`}></use>
+//             </svg>
+//             <input className={css.input} type="text" placeholder="City" />
+//           </div>
+//         </label> */}
+//         <p className={css.textForm}>Filters</p>
+//         <h2 className={css.titleForm}>Vehicle equipment</h2>
+//         <div className={css.line}></div>
+
+//         <div className={css.customCheckboxes}>
+//           <Checkbox id={"checkbox1"} icon={"icon-wind"} label={"AC"} />
+//           <Checkbox
+//             id={"checkbox2"}
+//             icon={"icon-diagram"}
+//             label={"Automatic"}
+//           />
+//           <Checkbox id={"checkbox3"} icon={"icon-fuel-pump"} label={"Petrol"} />
+//           <Checkbox id={"checkbox4"} icon={"icon-cup-hot"} label={"Kitchen"} />
+//           <Checkbox id={"checkbox5"} icon={"icon-tv"} label={"TV"} />
+//           <Checkbox
+//             id={"checkbox6"}
+//             icon={"icon-shower"}
+//             label={"Bathroom"}
+//           />
+//           <Checkbox id={"checkbox7"} icon={"icon-ui-radios"} label={"Radio"} />
+//           <Checkbox
+//             id={"checkbox8"}
+//             icon={"icon-solar_fridge-outline"}
+//             label={"Refrigerator"}
+//           />
+//           <Checkbox
+//             id={"checkbox9"}
+//             icon={"icon-ion_water-outline"}
+//             label={"Water"}
+//           />
+//           <Checkbox id={"checkbox10"} icon={"icon-hugeicons_gas"} label={"Gas"} />
+//           <Checkbox
+//             id={"checkbox11"}
+//             icon={"icon-lucide_microwave"}
+//             label={"Microwave"}
+//           />
+//         </div>
+
+//         <h2 className={css.titleForm}>Vehicle type</h2>
+//         <div className={css.line}></div>
+
+//         <div className={clsx(css.customCheckboxes, css.boxCheck)}>
+//           <Checkbox id={"box1"} icon={"icon-bi_grid-1x2"} label={"Van"} />
+//           <Checkbox
+//             id={"box2"}
+//             icon={"icon-bi_grid"}
+//             label={"Fully Integrated"}
+//           />
+//           <Checkbox
+//             id={"box3"}
+//             icon={"icon-bi_grid-3x3-gap"}
+//             label={"Alcove"}
+//           />
+//         </div>
+//         <button className={css.btn} type="submit">
+//           Search
+//         </button>
+//       </form>
+//     </>
+//   );
+// };
+
+// export default FilterPanel;
+
 import Icon from '../Icons/Icon.jsx';
 import css from './FilterPanel.module.css';
 
@@ -23,134 +108,4 @@ const FilterPanel = (params) => {
 
 export default FilterPanel;
 
-// import { Formik, Form, Field } from "formik";
-// import * as Yup from "yup";
-// import styles from "./FilterPanel.module.css"; // Підключення CSS Module
-// import { fetchCampers } from "../../api/campersAPI";
-
-// // Схема валідації форми
-// const FilterSchema = Yup.object().shape({
-//   location: Yup.string().required("Location is required"),
-//   equipment: Yup.array(),
-//   vehicleType: Yup.array(),
-// });
-
-// const FilterPanel = () => {
-//   // Фільтри обладнання та типу транспортного засобу
-//   const equipmentOptions = [
-//     { value: "automatic", label: "Automatic" },
-//     { value: "kitchen", label: "Kitchen" },
-//     { value: "tv", label: "TV" },
-//     { value: "bathroom", label: "Bathroom" },
-//   ];
-
-//   const vehicleTypeOptions = [
-//     { value: "van", label: "Van" },
-//     { value: "fully-integrated", label: "Fully Integrated" },
-//     { value: "alcove", label: "Alcove" },
-//   ];
-
-//   // Функція для відправки даних на бекенд
-//   const handleSubmit = async (values, { setSubmitting }) => {
-//     try {
-//       console.log("Submitting values:", values);
-
-//       const response = await fetchCampers("/vehicles/search", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(values),
-//       });
-
-//       const data = await response.json();
-//       console.log("API Response:", data);
-//       alert("Results fetched successfully!");
-//     } catch (error) {
-//       console.error("Error fetching data:", error);
-//       alert("Failed to fetch data.");
-//     } finally {
-//       setSubmitting(false);
-//     }
-//   };
-
-//   return (
-//     <div className={styles.container}>
-//       <h2>Filter Vehicles</h2>
-//       <Formik
-//         initialValues={{
-//           location: "Kyiv, Ukraine",
-//           equipment: [],
-//           vehicleType: [],
-//         }}
-//         validationSchema={FilterSchema}
-//         onSubmit={handleSubmit}
-//       >
-//         {({ values, isSubmitting }) => (
-//           <Form className={styles.form}>
-//             {/* Поле Локації */}
-//             <div className={styles.fieldGroup}>
-//               <label className={styles.label}>Location</label>
-//               <Field
-//                 name="location"
-//                 placeholder="Enter location"
-//                 className={styles.input}
-//               />
-//             </div>
-
-//             {/* Фільтри обладнання */}
-//             <div className={styles.fieldGroup}>
-//               <label className={styles.label}>Vehicle Equipment</label>
-//               <div className={styles.options}>
-//                 {equipmentOptions.map((option) => (
-//                   <label key={option.value} className={styles.checkboxLabel}>
-//                     <Field
-//                       type="checkbox"
-//                       name="equipment"
-//                       value={option.value}
-//                     />
-//                     {option.label}
-//                   </label>
-//                 ))}
-//               </div>
-//             </div>
-
-//             {/* Фільтри типу транспортного засобу */}
-//             <div className={styles.fieldGroup}>
-//               <label className={styles.label}>Vehicle Type</label>
-//               <div className={styles.options}>
-//                 {vehicleTypeOptions.map((option) => (
-//                   <label key={option.value} className={styles.checkboxLabel}>
-//                     <Field
-//                       type="checkbox"
-//                       name="vehicleType"
-//                       value={option.value}
-//                     />
-//                     {option.label}
-//                   </label>
-//                 ))}
-//               </div>
-//             </div>
-
-//             {/* Кнопка для надсилання */}
-//             <button
-//               type="submit"
-//               className={styles.submitButton}
-//               disabled={isSubmitting}
-//             >
-//               {isSubmitting ? "Searching..." : "Search"}
-//             </button>
-
-//             {/* Вивід поточних значень */}
-//             <pre className={styles.debugBox}>
-//               {JSON.stringify(values, null, 2)}
-//             </pre>
-//           </Form>
-//         )}
-//       </Formik>
-//     </div>
-//   );
-// };
-
-// export default FilterPanel;
 
