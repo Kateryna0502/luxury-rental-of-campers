@@ -8,12 +8,10 @@ const Icon = ({ id, width = 20, height = 20, color = 'main' }) => (
 
 export default Icon;
 
-// import sprite from '../../assets/img/sprite.svg';
 
-// const Icon = ({ id, width = 20, height = 20 }) => (
-//   <svg width={width} height={height}>
-//     <use href={`${sprite}#${id}`} />
-//   </svg>
-// );
 
-// export default Icon;
+
+
+
+
+

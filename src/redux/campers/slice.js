@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 import {
   getAllCampers,
   getCamperById,
@@ -16,15 +17,15 @@ const INITIAL_STATE = {
   filters: {
     location: "",
     equipment: {
-      AC: false,
-      bathroom: false,
-      kitchen: false,
-      TV: false,
-      radio: false,
-      refrigerator: false,
-      microwave: false,
-      gas: false,
-      water: false,
+      AC: { active: false, icon: "#wind" },
+      bathroom: { active: false, icon: "#bathroom" },
+      kitchen: { active: false, icon: "#kitchen" },
+      TV: { active: false, icon: "#tv" },
+      radio: { active: false, icon: "#radio" },
+      refrigerator: { active: false, icon: "#refrigerator" },
+      microwave: { active: false, icon: "#microwave" },
+      gas: { active: false, icon: "#gas" },
+      water: { active: false, icon: "#water" },
     },
     form: "",
   },

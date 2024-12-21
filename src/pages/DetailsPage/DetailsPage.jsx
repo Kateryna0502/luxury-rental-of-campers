@@ -37,7 +37,7 @@ function CamperInfoPage() {
   );
 
   const { id } = useParams();
-  console.log(id); 
+ 
 
   const [features, setFeatures] =
     useState(true);

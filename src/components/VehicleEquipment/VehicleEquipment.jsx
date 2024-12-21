@@ -3,6 +3,7 @@ import { addEquipment } from '../../redux/campers/action.js';
 import { useDispatch, useSelector } from 'react-redux';
 import FilterPanel from '../FilterPanel/FilterPanel.jsx';
 import css from './VehicleEquipment.module.css';
+// import Icon from '../Icons/Icon.jsx';
 
 const VehicleEquipment = () => {
   const equipments = useSelector(selectEquipment);
@@ -20,6 +21,8 @@ const VehicleEquipment = () => {
         <ul className={css.list}>
           {Object.entries(equipments).map(([key, value]) => (
             <li key={key} className={css.item}>
+              {/* <Icon id={equipments[key].icon} size={20} /> */}
+          
               <FilterPanel
                 id={key}
                 checked={value}
@@ -35,3 +38,4 @@ const VehicleEquipment = () => {
 };
 
 export default VehicleEquipment;
+
