@@ -83,29 +83,55 @@
 
 // export default FilterPanel;
 
+// import Icon from '../Icons/Icon.jsx';
+// import css from './FilterPanel.module.css';
+
+// const FilterPanel = (params) => {
+//   return (
+//     <label
+//       className={`${css.label} ${params.checked ? css.checked : ''}`}
+//     >
+//       <input
+//         type={params.type}
+//         id={params.id}
+//         checked={params.checked}
+//         onChange={params.onChange}
+//         className={css.input}
+//       />
+//       <Icon id={params.id} width={32} height={32} />
+//       <span className={css.text}>
+//         {params.name ? params.name : params.id}
+//       </span>
+//     </label>
+//   );
+// };
+
+// export default FilterPanel;
+
+
 import Icon from '../Icons/Icon.jsx';
 import css from './FilterPanel.module.css';
 
-const FilterPanel = (params) => {
+const FilterPanel = ({ id, iconId, name, type, checked, onChange }) => {
   return (
     <label
-      className={`${css.label} ${params.checked ? css.checked : ''}`}
+      className={`${css.label} ${checked ? css.checked : ''}`}
     >
       <input
-        type={params.type}
-        id={params.id}
-        checked={params.checked}
-        onChange={params.onChange}
+        type={type}
+        id={id}
+        checked={checked}
+        onChange={onChange}
         className={css.input}
       />
-      <Icon id={params.id} width={32} height={32} />
+      {/* Іконка */}
+      <Icon id={iconId} width={32} height={32} color={checked ? 'accent' : 'main'} />
+      {/* Текст */}
       <span className={css.text}>
-        {params.name ? params.name : params.id}
+        {name ? name : id}
       </span>
     </label>
   );
 };
 
 export default FilterPanel;
-
-
